@@ -32,7 +32,7 @@ connection.query('select * from students', function (err, rows, fields) {
 connection.end()
 });
 
-app.get('/student', function (req, res) {
+app.get('/subjects', function (req, res) {
     connection.connect()
     
     connection.query('select * from subjects', function (err, rows, fields) {
