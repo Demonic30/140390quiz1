@@ -13,12 +13,21 @@ var connection = mysql.createConnection({
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-    res.render('pages/index');
+    var name = 'Coffaree Hahza';
+    var hobbies = ['Music', 'Movie', 'Programming'];
+    var bdate = '19/05/1997';
+    res.render('pages/index', { fullname: name, hobbies: hobbies, bdate: bdate });
 });
 
 // Display all product
 
 app.get('/student', function (req, res) {
+    var connection = mysql.createConnection({
+        host     : 'www.db4free.net',
+        user     : 's140390',
+        password : 'abc123**',
+        database : 'db140390'
+      });
 connection.connect()
 
 connection.query('select * from students', function (err, rows, fields) {
@@ -33,6 +42,12 @@ connection.end()
 });
 
 app.get('/subjects', function (req, res) {
+    var connection = mysql.createConnection({
+        host     : 'www.db4free.net',
+        user     : 's140390',
+        password : 'abc123**',
+        database : 'db140390'
+      });
     connection.connect()
     
     connection.query('select * from subjects', function (err, rows, fields) {
