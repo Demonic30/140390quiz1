@@ -3,17 +3,19 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Users ID</th>
-            <th>Email</th>
-            <th>Password</th>
+            <th>Code</th>
+            <th>Title</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
         </tr>
     </thead>
     <tbody>
-    <% users.forEach(function(user) { %>
+    <% subjects.forEach(function(subject) { %>
         <tr>
-            <td scope="row"><%= user.id %></td>
-            <td><%= user.email %></td>
-            <td><%= user.password %></td>
+            <td scope="row"><%= subject.code %></td>
+            <td><%= subject.title %></td>
+            <td><%= subject.credits %></td>
+            <td><%= subject.sections %></td>
         </tr>
         <% }); %>
     </tbody>
